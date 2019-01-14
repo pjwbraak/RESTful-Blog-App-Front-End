@@ -1,0 +1,155 @@
+body {
+    text-align: justify;
+    font-size: 1em;
+    background-color: #f6f6f6;
+}
+
+.header {
+    text-align: left;
+}
+
+i.icon {
+    font-size: inherit;
+}
+
+.angle.icon.up.addComment {
+    padding-left: 0.35em;
+    display: none;
+}
+
+.dropdown.icon.addComment {
+    padding-left: 0.35em;
+}
+
+.container.main {
+    margin-top: 4.0em;
+}
+
+.extra {
+    float: right;
+    text-align: right;
+}
+
+.authorOnIndex {
+    padding-top: .5em;
+}
+
+.postUsername {
+    font-weight: bold;
+    color: rgba(0,0,0,.87);
+}
+
+.postDate {
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+}
+
+.flashMessageWrapper {
+    position: absolute;
+    top: 1.8em;
+    width: 100%;
+}
+
+.flashMessage {
+    padding-top: 3.5em;
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+.heightener {
+    height: 2.0em;
+}
+
+.ui.segment:last-child {
+    margin-bottom: 4.0em;
+}
+
+.ui.avatar.image {
+    border-radius: 10%;
+}
+
+div.forSmallScreenBlock {
+    float: left;
+}
+
+.floatLeft {
+    float: left;
+}
+
+#signOutIcon {
+    color: #2185d0;
+}
+
+#userOptions {
+    height: 100%;
+}
+
+#blogOptionsForm {
+    display: none;
+    float: right;
+}
+
+#signIn {
+    float: right;
+}
+
+#navbar {
+    padding-top: .2em;
+    padding-bottom: .2em;
+    z-index: 1;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: .5em;
+}
+
+#addComment {
+    cursor: pointer;
+}
+
+#editBlog {
+    font-size: 1rem;
+}
+
+.headerUserMenuItem {
+    margin-bottom: -.5em;
+    padding: 0;
+    height: 0;
+}
+
+#headerUserImage {
+    margin-right: .5em;
+}
+
+/*menu logic for large and smaller screen sizes*/
+
+/*hide for bigger screens*/
+#headerMenuDropdown, .forSmallScreen, .forSmallScreenBlock {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    /*#navbar, #loginMenu {*/
+    /*    padding-left: 0;*/
+    /*    padding-right: 0;*/
+    /*}*/
+    
+    /*show for smaller screens*/
+    #headerMenuDropdown, .forSmallScreen {
+        display: flex;
+    }
+    
+    .forSmallScreenBlock {
+        display: block;
+    }
+    
+    /*hide for smaller screens*/
+    #headerMenuBlogs, #headerMenuNewBlog, .forBigScreen {
+        display: none;
+    }
+    
+}
