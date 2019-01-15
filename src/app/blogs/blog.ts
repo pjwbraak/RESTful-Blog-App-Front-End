@@ -7,7 +7,7 @@ export interface IBlog {
         id: string,
         username: string
     };
-    comments: number [
+    comments: string [
     ];
 }
 
