@@ -1,13 +1,14 @@
 export interface IBlog {
-    title:  string;
-    image:  string;
-    body:   string;
-    created: string;
+    _id:            string;
+    title:          string;
+    image:          string;
+    body:           string;
+    created:        string;
     author: {
-        id: string,
-        username: string
+        id:         string,
+        username:   string
     };
-    comments: string [
+    comments:       string [
     ];
 }
 
