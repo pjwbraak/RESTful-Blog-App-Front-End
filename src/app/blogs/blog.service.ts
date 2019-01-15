@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IBlog } from './blog';
+import { IComment } from './comment';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
