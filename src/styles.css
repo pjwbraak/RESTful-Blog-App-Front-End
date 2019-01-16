@@ -155,6 +155,10 @@ div.forSmallScreenBlock {
 }
 
 /* Spinner CSS */
+.spinnerWrapper {
+    margin-top: 100px;
+}
+
 .lds-spinner {
     margin: 0 auto;
     position: relative;

@@ -12,19 +12,30 @@ import { catchError, tap, map } from 'rxjs/operators';
 export class BlogService {
 
     private blogsUrl = 'api/blogs/blogs.json';
+    private blogUrl = 'api/blogs/blog.json';
 
     constructor(private http: HttpClient) {}
 
     getBlogs(): Observable<IBlog[]> {
         return this.http.get<IBlog[]>(this.blogsUrl).pipe(
-            tap(data => console.log('All: ' + JSON.stringify(data))),
             catchError(this.handleError)
         );
     }
 
     getBlog(id: string): Observable<IBlog | undefined> {
-        return this.getBlogs().pipe(
-          map((blogs: IBlog[]) => blogs.find(b => b._id === id))
+        return this.http.get<IBlog>(this.blogUrl).pipe(
+            catchError(this.handleError)
+        );
+        // id = this.blogUrl + id;
+        // return this.http.get<IBlog>(id).pipe(
+        //     catchError(this.handleError)
+        // );
+    }
+
+    // get comments from blog
+    getBlogComments(id: string): Observable<IComment[] | undefined> {
+        return this.getBlog(id).pipe(
+            map((blog: IBlog) => blog.comments)
         );
     }
 

@@ -1,5 +1,5 @@
 <br>
-<div class="ui main text container segment">
+<div class="ui main text container segment" *ngIf='blog'>
     <!--blog-->
     <div class="ui huge header">{{ blog.title }}</div>
     <div class="ui top attached">
@@ -25,14 +25,28 @@
               </a>
           </div>
         </div>
-    
     <!--comment section-->
     <div class="ui comments">
-    <h3 class="ui dividing header">Comments</h3>
-  
-      <div class="actions">
-          <span><a class="reply active" href="#">Log in</a> to add a comment</span>
-          <br>
-      <br>
+        <h3 class="ui dividing header">Comments</h3>
+        <div class="actions">
+        <br>
+            <div class="comment" *ngFor='let comment of comments'>
+            <a class="avatar">
+                <img onerror="this.src='https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545'" src="">
+            </a>
+            <div class="content">
+                <a class="author" href="#">{{ comment.author.username }}</a>
+                <div class="metadata">
+                <span class="date">{{ comment.created }}</span>
+                </div>
+                <div class="text">
+                {{ comment.text }}
+                </div>
+                <!--<div class="actions">-->
+                <!--  <a class="reply">Reply</a>-->
+                <!--</div>-->
+                <br>
+            </div>
+        </div>
     </div>
-  </div>
+</div>

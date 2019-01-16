@@ -9,28 +9,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-    componentTitle = 'RESTful Blog App';
-    errorMessage = '';
-    blog: IBlog | undefined;
-
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private blogService: BlogService) {}
+
+    componentTitle = 'RESTful Blog App';
+    errorMessage = '';
+    blog: IBlog | undefined;
+    comments: IComment[];
 
     ngOnInit(): void {
         const param = this.route.snapshot.paramMap.get('id');
         if (param) {
           const id = '' + param; // convert number to string type
           this.getBlog(id);
+          this.getComments(id);
         }
     }
 
     getBlog(id: string) {
         this.blogService.getBlog(id).subscribe(
             blog => this.blog = blog,
-            error => this.errorMessage = <any>error);
+            error => this.errorMessage = <any>error
+        );
     }
 
-    // needs function to get comments that belong to blog
+    getComments(id: string) {
+        this.blogService.getBlogComments(id).subscribe(
+            comments => this.comments = comments,
+            error => this.errorMessage = <any>error
+        );
+    }
 }

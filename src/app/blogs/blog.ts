@@ -1,4 +1,6 @@
-export interface IBlog {
+import { IComment } from './comment';
+
+export interface IBlog extends IComment {
     _id:            string;
     title:          string;
     image:          string;
@@ -8,7 +10,7 @@ export interface IBlog {
         id:         string,
         username:   string
     };
-    comments:       string [
+    comments:       IComment [
     ];
 }
 

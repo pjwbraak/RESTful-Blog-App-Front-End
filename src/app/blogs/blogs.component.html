@@ -1,7 +1,7 @@
-<div class="ui main text container">
+<div class="ui main text container" *ngIf='blogs.length > 0'>
     <div class="ui huge header">{{ componentTitle }}</div>
     <div class="ui top attached segment">
-        <div class="ui divided items" *ngIf='blogs.length > 0'>
+        <div class="ui divided items">
                 <div class="item" *ngFor='let blog of blogs | reverse'> <!-- needs async pipe when blogs becomes an observable -->
                     <div class="image">
                         <img onerror="this.src='https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545'" src= '{{ blog.image }}'>
@@ -35,8 +35,9 @@
                     </div>
                 </div>
         </div>
-        <div class="lds-spinner" *ngIf='blogs.length == 0'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
 </div>
-
+<div class="spinnerWrapper">
+    <div class="lds-spinner" *ngIf='blogs.length == 0'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
 <br>
