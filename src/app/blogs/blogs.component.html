@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="content">
-                        <a class="header" href="#">{{ blog.title }}</a>
+                        <a class="header" [routerLink]="['/blogs', blog._id]">{{ blog.title }}</a>
                         <div class="meta">
                             <span>{{ blog.created | date: 'longDate' }}</span>
                         </div>
@@ -27,7 +27,7 @@
                                 <div class="meta" *ngIf='blog.comments.length == 1'>1 comment</div>
                         </div>
                         <div class="extra">
-                            <a class="ui floated secondary button" href="#">
+                            <a class="ui floated secondary button" [routerLink]="['/blogs', blog._id]">
                                 Read more
                                 <i class="right chevron icon"></i>
                             </a>

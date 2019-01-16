@@ -1,0 +1,38 @@
+<br>
+<div class="ui main text container segment">
+    <!--blog-->
+    <div class="ui huge header">{{ blog.title }}</div>
+    <div class="ui top attached">
+        <div class="item">
+            <img onerror="this.src='https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545'" class="ui centered rounded image" src="{{ blog.image }}">
+            <div class="description">
+                <br>
+                <div>
+                    <a href="#" class="postUsername">{{ blog.author.username }}</a>
+                    <span class="postDate"> on {{ blog.created }}</span>
+                </div>
+                <br>
+                <p>{{ blog.body }}</p> <!-- needs check against scripting in body! -->
+            </div>
+        </div>
+        <br>
+        
+        <div class="heightener">
+          <div class="extra heightener">
+              <!--back button-->
+              <a class="ui secondary button" href="#">
+                  <i class="left chevron icon"></i>Go back
+              </a>
+          </div>
+        </div>
+    
+    <!--comment section-->
+    <div class="ui comments">
+    <h3 class="ui dividing header">Comments</h3>
+  
+      <div class="actions">
+          <span><a class="reply active" href="#">Log in</a> to add a comment</span>
+          <br>
+      <br>
+    </div>
+  </div>

@@ -28,12 +28,6 @@ export class BlogService {
         );
     }
 
-    // getProduct(id: number): Observable<IBlog | undefined> {
-    //     return this.getProducts().pipe(
-    //       map((products: IBlog[]) => products.find(p => p.productId === id))
-    //     );
-    //   }
-
     private handleError(err: HttpErrorResponse) {
         let errorMessage = '';
         if (err.error instanceof ErrorEvent) {
