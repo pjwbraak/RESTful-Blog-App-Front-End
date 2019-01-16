@@ -10,8 +10,7 @@ export interface IBlog extends IComment {
         id:         string,
         username:   string
     };
-    comments:       IComment [
-    ];
+    comments:       IComment[];
 }
 
 // not needed for this app, but nice to know how to do:
