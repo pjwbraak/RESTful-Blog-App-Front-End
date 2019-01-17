@@ -30,7 +30,7 @@
         <h3 class="ui dividing header">Comments</h3>
         <div class="actions">
         <br>
-            <div class="comment" *ngFor='let comment of comments'>
+            <div class="comment" *ngFor='let comment of comments | reverse'> <!-- async -->
             <a class="avatar">
                 <img onerror="this.src='https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545'" src="">
             </a>
