@@ -37,7 +37,7 @@
             <div class="content">
                 <a class="author" href="#">{{ comment.author.username }}</a>
                 <div class="metadata">
-                <span class="date">{{ comment.created }}</span>
+                <span class="date">{{ comment.created | date: 'longDate' }}</span>
                 </div>
                 <div class="text">
                 {{ comment.text }}
