@@ -9,7 +9,7 @@
                 <br>
                 <div>
                     <a href="#" class="postUsername">{{ blog.author.username }}</a>
-                    <span class="postDate"> on {{ blog.created }}</span>
+                    <span class="postDate"> on {{ blog.created | date: 'longDate' }}</span>
                 </div>
                 <br>
                 <p>{{ blog.body }}</p> <!-- needs check against scripting in body! -->
