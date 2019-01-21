@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IBlog } from './blog';
 import { BlogService } from './blog.service';
+import { ErrorHandlingService } from '../shared/error-handling.service';
 
 @Component({
     templateUrl: './blogs.component.html'
@@ -11,7 +12,8 @@ export class BlogsComponent implements OnInit {
     blogs: IBlog[] = [];
     errorMessage: string;
 
-    constructor(private blogService: BlogService) {}
+    constructor(private blogService: BlogService,
+                private errorHandlingService: ErrorHandlingService) {}
 
     ngOnInit(): void {
         this.blogService.getBlogs().subscribe(
@@ -20,5 +22,9 @@ export class BlogsComponent implements OnInit {
             },
             error => this.errorMessage = <any>error
         );
+    }
+
+    srcErrorHandler(event) {
+        this.errorHandlingService.srcErrorHandler(event);
     }
 }

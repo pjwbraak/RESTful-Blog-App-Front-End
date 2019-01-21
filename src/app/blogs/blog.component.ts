@@ -3,6 +3,7 @@ import { IBlog } from './blog';
 import { IComment } from './comment';
 import { BlogService } from './blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ErrorHandlingService } from '../shared/error-handling.service';
 
 @Component({
     templateUrl: './blog.component.html'
@@ -12,13 +13,13 @@ export class BlogComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private blogService: BlogService) {}
+        private blogService: BlogService,
+        private errorHandlingService: ErrorHandlingService) {}
 
     componentTitle = 'RESTful Blog App';
     errorMessage = '';
     blog: IBlog | undefined;
     comments: IComment[];
-    noImage: string = 'https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545';
 
     ngOnInit(): void {
         const param = this.route.snapshot.paramMap.get('id');
@@ -44,6 +45,6 @@ export class BlogComponent implements OnInit {
     }
 
     srcErrorHandler(event) {
-        event.target.src = this.noImage;
+        this.errorHandlingService.srcErrorHandler(event);
     }
 }
