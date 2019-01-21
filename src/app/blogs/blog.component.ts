@@ -18,6 +18,7 @@ export class BlogComponent implements OnInit {
     errorMessage = '';
     blog: IBlog | undefined;
     comments: IComment[];
+    noImage: string = 'https://cdn.shopify.com/s/files/1/1380/9193/t/3/assets/no-image.svg?2375582141201571545';
 
     ngOnInit(): void {
         const param = this.route.snapshot.paramMap.get('id');
@@ -40,5 +41,9 @@ export class BlogComponent implements OnInit {
             comments => this.comments = comments,
             error => this.errorMessage = <any>error
         );
+    }
+
+    srcErrorHandler(event) {
+        event.target.src = this.noImage;
     }
 }
